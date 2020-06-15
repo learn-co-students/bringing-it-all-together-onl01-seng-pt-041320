@@ -27,7 +27,8 @@ class Dog
         DB[:conn].execute(sql)
     end
 
-    def new_from_db
-
+    def new_from_db(row)
+        new_dog = self.new(row[0], row[1], row[2]) #new instance of a Dog
+        new_dog
     end
 end
